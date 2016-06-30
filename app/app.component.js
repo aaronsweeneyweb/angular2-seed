@@ -31,6 +31,7 @@ System.register(['angular2/core', './courses.component', './authors.component'],
                     core_1.Component({
                         selector: 'my-app',
                         template: "\n        <h1>Hello Angular</h1>\n        <courses></courses>\n        <authors></authors>",
+                        // Components must be explicitly referenced here for the template to know what they are.
                         directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent]
                     }), 
                     __metadata('design:paramtypes', [])

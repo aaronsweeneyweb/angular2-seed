@@ -8,6 +8,7 @@ import {AuthorsComponent} from './authors.component';
         <h1>Hello Angular</h1>
         <courses></courses>
         <authors></authors>`,
+    // Components must be explicitly referenced here for the template to know what they are.
     directives: [CoursesComponent, AuthorsComponent]
 })
 export class AppComponent { }
