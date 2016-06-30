@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './author.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,25 +10,29 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, author_service_1;
     var AuthorsComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (author_service_1_1) {
+                author_service_1 = author_service_1_1;
             }],
         execute: function() {
             AuthorsComponent = (function () {
-                function AuthorsComponent() {
+                function AuthorsComponent(authorService) {
                     this.title = "Title for the authors page";
-                    this.authors = ["Author1", "Author2", "Author3"];
+                    this.authors = authorService.getAuthors();
                 }
                 AuthorsComponent = __decorate([
                     core_1.Component({
                         selector: 'authors',
-                        template: "\n  <h2>Authors</h2>\n  {{ title }}\n  <ul>\n    <li *ngFor=\"#author of authors\">\n      {{ author }}\n    </li>\n  </ul>\n  "
+                        template: "\n    <h2>Authors</h2>\n    {{ title }}\n    <ul>\n      <li *ngFor=\"#author of authors\">\n        {{ author }}\n      </li>\n    </ul>\n    ",
+                        providers: [author_service_1.AuthorService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [author_service_1.AuthorService])
                 ], AuthorsComponent);
                 return AuthorsComponent;
             }());

@@ -6,25 +6,25 @@ import {CourseService} from './course.service';
 // selector specifies a CSS selector for a host HTML element.
 // template specifies the HTML that will be inserted in to the DOM when the components view is rendered.
 @Component({
-  selector: 'courses',
-  template: `
-    <h2>Courses</h2>
-    {{ title }}
-    <ul>
-      <li *ngFor="#course of courses">
-        {{ course }}
-      </li>
-    </ul>
-    `,
-  //in this array, we specify the dependencies for the component
-  providers: [CourseService]
+    selector: 'courses',
+    template: `
+      <h2>Courses</h2>
+      {{ title }}
+      <ul>
+        <li *ngFor="#course of courses">
+          {{ course }}
+        </li>
+      </ul>
+      `,
+    //in this array, we specify the dependencies for the component
+    providers: [CourseService]
 })
 
 export class CoursesComponent {
-  title = "The title of courses page";
-  courses;
+    title = "The title of courses page";
+    courses;
 
-  constructor(courseService: CourseService){
-    this.courses = courseService.getCourses();
-  }
+    constructor(courseService: CourseService){
+        this.courses = courseService.getCourses();
+    }
 }

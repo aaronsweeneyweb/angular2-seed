@@ -32,7 +32,7 @@ System.register(['angular2/core', './course.service'], function(exports_1, conte
                 CoursesComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: "\n    <h2>Courses</h2>\n    {{ title }}\n    <ul>\n      <li *ngFor=\"#course of courses\">\n        {{ course }}\n      </li>\n    </ul>\n    ",
+                        template: "\n      <h2>Courses</h2>\n      {{ title }}\n      <ul>\n        <li *ngFor=\"#course of courses\">\n          {{ course }}\n        </li>\n      </ul>\n      ",
                         //in this array, we specify the dependencies for the component
                         providers: [course_service_1.CourseService]
                     }), 
