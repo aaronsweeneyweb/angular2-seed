@@ -1,5 +1,6 @@
 //importing the Component decorator from the core Angular module. This is how we define this page as a component.
 import {Component} from 'angular2/core';
+import {CourseService} from './course.service';
 
 // These decorators are funtions (which take an object), so we have to call them:
 // selector specifies a CSS selector for a host HTML element.
@@ -14,10 +15,16 @@ import {Component} from 'angular2/core';
         {{ course }}
       </li>
     </ul>
-    `
+    `,
+  //in this array, we specify the dependencies for the component
+  providers: [CourseService]
 })
 
 export class CoursesComponent {
   title = "The title of course page";
-  courses = ["Course1", "Course2", "Course3"];
+  courses;
+
+  constructor(courseService: CourseService){
+    this.courses = courseService.getCourses();
+  }
 }
