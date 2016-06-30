@@ -26,7 +26,7 @@ System.register(['angular2/core', './course.service'], function(exports_1, conte
             // template specifies the HTML that will be inserted in to the DOM when the components view is rendered.
             CoursesComponent = (function () {
                 function CoursesComponent(courseService) {
-                    this.title = "The title of course page";
+                    this.title = "The title of courses page";
                     this.courses = courseService.getCourses();
                 }
                 CoursesComponent = __decorate([
