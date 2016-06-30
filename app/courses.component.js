@@ -18,16 +18,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            // These decorators are funtions, so we have to call them:
+            // These decorators are funtions (which take an object), so we have to call them:
             // selector specifies a CSS selector for a host HTML element.
             // template specifies the HTML that will be inserted in to the DOM when the components view is rendered.
             CoursesComponent = (function () {
                 function CoursesComponent() {
+                    this.title = "The title of course page";
+                    this.courses = ["Course1", "Course2", "Course3"];
                 }
                 CoursesComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: '<h2>Courses</h2>'
+                        template: "\n    <h2>Courses</h2>\n    {{ title }}\n    <ul>\n      <li *ngFor=\"#course of courses\">\n        {{ course }}\n      </li>\n    </ul>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], CoursesComponent);
